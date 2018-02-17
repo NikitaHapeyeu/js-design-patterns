@@ -9,7 +9,7 @@ var CompositeForm = function(id, method, action) {
 
 CompositeForm.prototype.add = function(child) {
   this.formComponents.push(child);
-  //this.element.appendChild(child.getElement());
+ // this.element.appendChild(child.getElement());
 };
 
 CompositeForm.prototype.remove = function(child) {
@@ -21,10 +21,17 @@ CompositeForm.prototype.remove = function(child) {
   }
 };
 
+CompositeForm.prototype.getChild = function() {
+  return this.formComponents[i];
+};
+
+CompositeForm.prototype.getElement = function() {
+  return this.element;
+};
 
 
-var el = new CompositeForm(1);
-el.add('foo');
-el.add('bar');
-el.remove('foo');
-console.log(el);
+
+var contactForm = new CompositeForm('contact-form', 'POST');
+contactForm.add('foo');
+contactForm.remove('foo');
+console.log(contactForm);
