@@ -2,6 +2,8 @@ var mySingleton = (function(){
     var instance;
 
     function init() {
+
+        // Singleton 
         function privateMethod() {
             console.log('private method');
         };
@@ -30,7 +32,8 @@ var mySingleton = (function(){
     };
 })();
 
+// usage:
 var a = mySingleton.getInstance();
 var b = mySingleton.getInstance();
 
-console.log(a.getRandomNumber() === b.getRandomNumber());
+console.log(a.getRandomNumber() === b.getRandomNumber()); // true
